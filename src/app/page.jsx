@@ -53,9 +53,6 @@ const Page = async () => {
                         </Link>
                     ))}
                 </div>
-                <a href="fullAnime" className="text-center size-5">
-                    see all anime
-                </a>
             </section>
 
             {/* Complete Anime */}
