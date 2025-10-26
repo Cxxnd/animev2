@@ -59,6 +59,14 @@ const Page = async () => {
             <section>
                 <h2 className="text-2xl font-semibold mb-4 text-purple-400 border-b border-purple-700 pb-2">
                     ✅ Complete Anime
+                    <div className="text-lg text-right hover:underline">
+                        <Link
+                            href="genre"
+                            className="hover:text-blue-400 transition-colors duration-200"
+                        >
+                            All Genre
+                        </Link>
+                    </div>
                 </h2>
 
                 <div className="grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-5">
