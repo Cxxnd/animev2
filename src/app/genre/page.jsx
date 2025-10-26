@@ -3,7 +3,7 @@ import { getAnime } from "@/libs/service-api";
 
 const Page = async () => {
     // Ambil data genre dari API kamu
-    const genreData = await getAnime("/genres");
+    const genreData = await getAnime({ resource: "genre" });
 
     return (
         <section className="px-6 py-8 min-h-screen bg-gray-900 text-white">
