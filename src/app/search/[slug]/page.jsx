@@ -1,21 +1,55 @@
-import { getAnime } from "@/libs/service-api";
 import AnimeList from "@/components/AnimeList";
+import Image from "next/image";
 
 const Page = async ({ params }) => {
+    // Ambil parameter slug dari URL (misal: /search/naruto)
     const { slug } = await params;
     const decoded = decodeURIComponent(slug);
-    const searchResult = await getAnime(`/search/${decoded}`);
 
-    return (
-        <section className="min-h-screen px-6 py-8 bg-gray-900 text-white">
-            <h1 className="text-2xl font-semibold mb-6 text-color-primary">
-                Hasil Pencarian Anime:{" "}
-                <span className="capitalize">{decoded}</span>
-            </h1>
+    // Endpoint API kamu
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/search/${decoded}`;
 
-            <AnimeList api={searchResult} />
-        </section>
-    );
+    try {
+        const response = await fetch(apiUrl, {
+            next: { revalidate: 120 },
+            headers: {
+                "User-Agent":
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`Fetch gagal: ${response.status}`);
+        }
+
+        const data = await response.json();
+        const results = data.search_results || [];
+
+        return (
+            <section className="min-h-screen px-6 py-8 bg-gray-900 text-white">
+                <h1 className="text-3xl font-bold mb-6 text-purple-400">
+                    Hasil Pencarian Anime:{" "}
+                    <span className="capitalize">{decoded}</span>
+                </h1>
+
+                {results.length === 0 ? (
+                    <p className="text-gray-400">
+                        Tidak ditemukan hasil untuk{" "}
+                        <span className="italic">"{decoded}"</span>.
+                    </p>
+                ) : (
+                    <AnimeList api={results} />
+                )}
+            </section>
+        );
+    } catch (error) {
+        console.error("Error di search:", error.message);
+        return (
+            <section className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-red-400">
+                <p>Terjadi kesalahan: {error.message}</p>
+            </section>
+        );
+    }
 };
 
 export default Page;

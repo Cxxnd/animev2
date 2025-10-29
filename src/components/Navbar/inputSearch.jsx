@@ -2,17 +2,18 @@
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
+import { useState } from "react";
 
 const InputSearch = () => {
     const searchRef = useRef();
     const router = useRouter();
+    const [keyword, setKeyword] = useState("");
 
     const handleSearch = (event) => {
-        const decoded = searchRef.current.value.trim();
         event.preventDefault();
-        if (decoded) {
-            router.push(`/search/${decoded}`);
-        }
+        const trimmedKeyword = searchRef.current.value.trim();
+        const decoded = encodeURIComponent(trimmedKeyword);
+        router.push(`/search/${decoded}`);
     };
 
     const handleKeyDown = (event) => {

@@ -23,30 +23,34 @@ const Page = async () => {
 
             {/* Ongoing Anime */}
             <section className="mb-12">
-                <h2 className="text-2xl font-semibold mb-4 text-blue-400 border-b border-blue-700 pb-2">
-                    🔥 Ongoing Anime
-                </h2>
+                <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-2xl font-semibold text-blue-400 border-b border-blue-700 pb-2">
+                        🔥 Ongoing Anime
+                    </h2>
+                </div>
 
                 <div className="grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-5">
                     {ongoingAnime.map((anime, index) => (
                         <Link
                             href={`/anime/${anime.slug}`}
                             key={`ongoing-${index}`}
-                            className="group block bg-gray-900 border border-gray-800 hover:border-blue-600 rounded-xl overflow-hidden shadow-md hover:shadow-blue-700/20 transition-all duration-300 hover:-translate-y-1"
+                            className="group relative bg-gray-900/60 border border-gray-800 hover:border-blue-600 rounded-2xl overflow-hidden shadow-md hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1"
                         >
-                            <div className="relative">
+                            {/* Poster */}
+                            <div className="relative aspect-[3/4] overflow-hidden">
                                 <Image
                                     src={anime.poster}
                                     alt={anime.title}
-                                    width={250}
-                                    height={350}
+                                    fill
                                     unoptimized
-                                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                             </div>
+
+                            {/* Info */}
                             <div className="p-3">
-                                <h3 className="font-semibold text-sm line-clamp-2 group-hover:text-blue-400 transition-colors duration-200">
+                                <h3 className="text-sm font-semibold line-clamp-2 text-white group-hover:text-blue-400 transition-colors duration-300">
                                     {anime.title}
                                 </h3>
                             </div>
@@ -57,38 +61,40 @@ const Page = async () => {
 
             {/* Complete Anime */}
             <section>
-                <h2 className="text-2xl font-semibold mb-4 text-purple-400 border-b border-purple-700 pb-2">
-                    ✅ Complete Anime
-                    <div className="text-lg text-right hover:underline">
-                        <Link
-                            href="genre"
-                            className="hover:text-blue-400 transition-colors duration-200"
-                        >
-                            All Genre
-                        </Link>
-                    </div>
-                </h2>
+                <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-2xl font-semibold text-purple-400 border-b border-purple-700 pb-2">
+                        ✅ Complete Anime
+                    </h2>
+                    <Link
+                        href="/genre"
+                        className="text-sm hover:text-purple-300 transition-colors duration-300"
+                    >
+                        All Genre →
+                    </Link>
+                </div>
 
                 <div className="grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-5">
                     {completeAnime.map((anime, index) => (
                         <Link
                             href={`/anime/${anime.slug}`}
                             key={`complete-${index}`}
-                            className="group block bg-gray-900 border border-gray-800 hover:border-purple-600 rounded-xl overflow-hidden shadow-md hover:shadow-purple-700/20 transition-all duration-300 hover:-translate-y-1"
+                            className="group relative bg-gray-900/60 border border-gray-800 hover:border-purple-600 rounded-2xl overflow-hidden shadow-md hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-1"
                         >
-                            <div className="relative">
+                            {/* Poster */}
+                            <div className="relative aspect-[3/4] overflow-hidden">
                                 <Image
                                     src={anime.poster}
                                     alt={anime.title}
-                                    width={250}
-                                    height={350}
+                                    fill
                                     unoptimized
-                                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                             </div>
+
+                            {/* Info */}
                             <div className="p-3">
-                                <h3 className="font-semibold text-sm line-clamp-2 group-hover:text-purple-400 transition-colors duration-200">
+                                <h3 className="text-sm font-semibold line-clamp-2 text-white group-hover:text-purple-400 transition-colors duration-300">
                                     {anime.title}
                                 </h3>
                             </div>
