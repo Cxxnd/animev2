@@ -9,12 +9,9 @@ import AnimeList from "@/components/AnimeList";
 const GenreDetailPage = ({ params }) => {
     const { slug } = React.use(params);
     const searchParams = useSearchParams();
-    const router = useRouter();
-
     const currentPage = parseInt(searchParams.get("page")) || 1;
     const [page, setPage] = useState(currentPage);
     const [animeData, setAnimeData] = useState({});
-    const [lastPage, setLastPage] = useState(1);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -26,7 +23,6 @@ const GenreDetailPage = ({ params }) => {
                 });
 
                 console.log("API Response:", res); // Untuk debugging
-
                 setAnimeData(res || {});
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -52,7 +48,9 @@ const GenreDetailPage = ({ params }) => {
                     Halaman{" "}
                     <span className="text-white font-semibold">{page}</span>{" "}
                     dari{" "}
-                    <span className="text-white font-semibold">{lastPage}</span>
+                    <span className="text-white font-semibold">
+                        {animeData?.data?.pagination?.last_visible_page || 1}
+                    </span>
                 </p>
             </div>
 

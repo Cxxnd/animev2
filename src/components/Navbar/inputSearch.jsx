@@ -8,10 +8,10 @@ const InputSearch = () => {
     const router = useRouter();
 
     const handleSearch = (event) => {
-        const keyword = searchRef.current.value.trim();
+        const decoded = searchRef.current.value.trim();
         event.preventDefault();
-        if (keyword) {
-            router.push(`/search/${keyword}`);
+        if (decoded) {
+            router.push(`/search/${decoded}`);
         }
     };
 
