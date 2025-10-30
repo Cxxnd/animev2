@@ -1,5 +1,4 @@
 "use client";
-import "@/styles/shimmer.css";
 
 const LoadingSkeleton = () => {
     const skeletons = Array(12).fill(0);
