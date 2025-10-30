@@ -64,15 +64,15 @@ const Page = async () => {
                         </Link>
                     ))}
                 </div>
-                <div className="flex items-center justify-center mt-10">
-                    <Link
-                        href="/genre"
-                        className="text-sm hover:text-purple-300 transition-colors duration-300 bg-blue-600 px-3 py-1 rounded-md"
-                    >
-                        Lihat Genre
-                    </Link>
-                </div>
             </section>
+            <div className="flex items-center justify-center mt-10">
+                <Link
+                    href="/genre"
+                    className="text-sm hover:text-purple-300 transition-colors duration-300 bg-blue-600 px-3 py-1 rounded-md"
+                >
+                    Lihat Genre
+                </Link>
+            </div>
 
             {/* Complete Anime */}
             <section>
