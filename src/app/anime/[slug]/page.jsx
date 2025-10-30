@@ -1,6 +1,7 @@
 import { getAnime } from "@/libs/service-api";
 import Image from "next/image";
 import Link from "next/link";
+import ButtonBack from "@/components/Navbar/ButtonBack";
 
 const Page = async ({ params }) => {
     const { slug } = await params;
@@ -14,6 +15,7 @@ const Page = async ({ params }) => {
 
     return (
         <div className="max-w-6xl mx-auto p-4 text-gray-100">
+            <ButtonBack />
             {/* Header */}
             <div className="flex flex-col md:flex-row gap-6 border border-gray-800 bg-gray-900/50 p-4 rounded-xl">
                 {/* Poster */}

@@ -1,5 +1,6 @@
 import AnimeList from "@/components/AnimeList";
-import Image from "next/image";
+import ButtonBack from "@/components/Navbar/ButtonBack";
+import LoadingSkeleton from "@/components/Utilities/LoadingSkeleton";
 
 const Page = async ({ params }) => {
     const { slug } = await params;
@@ -24,10 +25,9 @@ const Page = async ({ params }) => {
 
         return (
             <section className="min-h-screen px-6 py-8 bg-gray-900 text-white">
-                <h1 className="text-3xl font-bold mb-6 text-purple-400">
-                    Hasil Pencarian Anime:{" "}
-                    <span className="capitalize">{decoded}</span>
-                </h1>
+                <div className="mb-6">
+                    <ButtonBack />
+                </div>
 
                 {results.length === 0 ? (
                     <p className="text-gray-400">

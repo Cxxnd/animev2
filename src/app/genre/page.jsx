@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { getAnime } from "@/libs/service-api";
+import ButtonBack from "@/components/Navbar/ButtonBack";
 
 const Page = async () => {
     const genreData = await getAnime({ resource: "genre" });
 
     return (
         <section className="px-6 py-8 min-h-screen bg-gray-900 text-white">
+            <ButtonBack />
             <h1 className="text-3xl font-bold mb-8 text-center">
                 Daftar Genre Anime
             </h1>

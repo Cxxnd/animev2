@@ -1,5 +1,6 @@
 import { getAnime } from "@/libs/service-api";
 import Link from "next/link";
+import ButtonBack from "@/components/Navbar/ButtonBack";
 
 const Page = async ({ params }) => {
     const { slug } = await params;
@@ -11,6 +12,7 @@ const Page = async ({ params }) => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white px-6 py-10">
             <div className="max-w-6xl mx-auto space-y-10">
+                <ButtonBack />
                 {/* Header Episode */}
                 <div className="text-center">
                     <h1 className="text-3xl md:text-4xl font-extrabold text-blue-400">

@@ -7,6 +7,7 @@ const Page = async () => {
 
     const ongoingAnime = animeHome?.data?.ongoing_anime || [];
     const completeAnime = animeHome?.data?.complete_anime || [];
+    const handlerComplete = () => {};
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 px-6 py-10 text-white">
@@ -27,6 +28,12 @@ const Page = async () => {
                     <h2 className="text-2xl font-semibold text-blue-400 border-b border-blue-700 pb-2">
                         🔥 Ongoing Anime
                     </h2>
+                    {/* <Link
+                        href="/genre"
+                        className="text-sm hover:text-purple-300 transition-colors duration-300"
+                    >
+                        Lihat OnGoing →
+                    </Link> */}
                 </div>
 
                 <div className="grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-5">
@@ -57,6 +64,14 @@ const Page = async () => {
                         </Link>
                     ))}
                 </div>
+                <div className="flex items-center justify-center mt-10">
+                    <Link
+                        href="/genre"
+                        className="text-sm hover:text-purple-300 transition-colors duration-300 bg-blue-600 px-3 py-1 rounded-md"
+                    >
+                        Lihat Genre
+                    </Link>
+                </div>
             </section>
 
             {/* Complete Anime */}
@@ -65,12 +80,6 @@ const Page = async () => {
                     <h2 className="text-2xl font-semibold text-purple-400 border-b border-purple-700 pb-2">
                         ✅ Complete Anime
                     </h2>
-                    <Link
-                        href="/genre"
-                        className="text-sm hover:text-purple-300 transition-colors duration-300"
-                    >
-                        All Genre →
-                    </Link>
                 </div>
 
                 <div className="grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-5">
