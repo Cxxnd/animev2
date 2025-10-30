@@ -45,7 +45,7 @@ const InputSearch = () => {
 
             {/* Pesan error */}
             {error && (
-                <p className="text-red-500 text-sm mt-2 text-center animate-pulse">
+                <p className="text-red-500 text-sm text-center animate-pulse">
                     Isi dulu kata kunci pencarian 🔍
                 </p>
             )}
