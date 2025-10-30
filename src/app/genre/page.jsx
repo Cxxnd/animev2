@@ -2,7 +2,6 @@ import Link from "next/link";
 import { getAnime } from "@/libs/service-api";
 
 const Page = async () => {
-    // Ambil data genre dari API kamu
     const genreData = await getAnime({ resource: "genre" });
 
     return (

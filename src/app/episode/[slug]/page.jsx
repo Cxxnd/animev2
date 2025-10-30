@@ -60,7 +60,6 @@ const Page = async ({ params }) => {
                         {(() => {
                             try {
                                 const parts = data.anime.slug.split("/");
-                                // Ambil bagian terakhir yang tidak kosong
                                 const lastPart = parts.filter(Boolean).pop();
                                 return lastPart.replace(/-/g, " ");
                             } catch {

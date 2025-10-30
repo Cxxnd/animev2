@@ -2,11 +2,8 @@ import AnimeList from "@/components/AnimeList";
 import Image from "next/image";
 
 const Page = async ({ params }) => {
-    // Ambil parameter slug dari URL (misal: /search/naruto)
     const { slug } = await params;
     const decoded = decodeURIComponent(slug);
-
-    // Endpoint API kamu
     const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/search/${decoded}`;
 
     try {

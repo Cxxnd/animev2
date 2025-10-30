@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Star } from "lucide-react"; // ikon bintang elegan
+import { Star } from "lucide-react";
 
 const AnimeList = ({ api }) => {
     const animeData = api?.data?.anime || api?.data || api || [];

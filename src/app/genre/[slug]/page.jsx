@@ -21,8 +21,6 @@ const GenreDetailPage = ({ params }) => {
                 const res = await getAnime({
                     resource: `genre/${slug}?page=${page}`,
                 });
-
-                console.log("API Response:", res); // Untuk debugging
                 setAnimeData(res || {});
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -33,7 +31,7 @@ const GenreDetailPage = ({ params }) => {
         };
 
         fetchData();
-    }, [page, slug]); // ✅ PERBAIKAN: Hapus fetchData dari dependency
+    }, [page, slug]);
 
     return (
         <div className="p-6 max-w-7xl mx-auto">
