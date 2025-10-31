@@ -1,6 +1,5 @@
 import AnimeList from "@/components/AnimeList";
 import ButtonBack from "@/components/Navbar/ButtonBack";
-import LoadingSkeleton from "@/components/Utilities/LoadingSkeleton";
 
 const Page = async ({ params }) => {
     const { slug } = await params;

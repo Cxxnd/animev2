@@ -9,7 +9,13 @@ const AnimeList = ({ api }) => {
         <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {animeData.map((anime, index) => (
                 <Link
-                    href={`/anime/${anime.slug}`}
+                    href={`/anime/${
+                        (anime.slug &&
+                            anime.slug
+                                ?.split("/anime/")[1]
+                                ?.replace(/\/+$/, "")) ||
+                        ""
+                    }`}
                     key={index}
                     className="group rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900/60 hover:bg-zinc-800 transition-all shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1"
                 >
