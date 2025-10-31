@@ -40,8 +40,8 @@ const AnimeList = ({ api }) => {
                     </div>
 
                     {/* Konten */}
-                    <div className="p-3 flex flex-col justify-between h-[110px]">
-                        <h3 className="text-base font-semibold text-white line-clamp-2 group-hover:text-blue-400 transition-colors">
+                    <div className="p-3 flex flex-col justify-between h-[150px]">
+                        <h3 className="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">
                             {anime.title}
                         </h3>
 
