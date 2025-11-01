@@ -148,8 +148,7 @@ const Page = async ({ params }) => {
                         Batch
                     </h2>
                     <Link
-                        href={data.batch.otakudesu_url}
-                        target="_blank"
+                        href={`/batch/${data.batch.slug}`}
                         className="text-blue-400 hover:underline"
                     >
                         {data.batch.slug}
