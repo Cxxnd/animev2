@@ -1,5 +1,7 @@
 import Image from "next/image";
+import ButtonBack from "@/components/Navbar/ButtonBack";
 import { getAnime } from "@/libs/service-api";
+import Link from "next/link";
 
 const Page = async ({ params }) => {
     const { slug } = params;
@@ -21,6 +23,7 @@ const Page = async ({ params }) => {
 
     return (
         <main className="max-w-5xl mx-auto p-6 space-y-8">
+            <ButtonBack />
             {/* Header Anime */}
             <section className="flex flex-col md:flex-row gap-6 items-start">
                 {/* Poster */}
@@ -65,12 +68,13 @@ const Page = async ({ params }) => {
                     {/* Genre */}
                     <div className="flex flex-wrap gap-2 mt-3">
                         {data.genreList?.map((genre, i) => (
-                            <span
+                            <Link
+                                href={`/genre/${genre.genreId}`}
                                 key={i}
                                 className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs"
                             >
                                 {genre.title}
-                            </span>
+                            </Link>
                         ))}
                     </div>
                 </div>
