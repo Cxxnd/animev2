@@ -5,14 +5,8 @@ import Link from "next/link";
 
 const Page = async ({ params }) => {
     const { slug } = params;
-
-    // Ambil data anime dari API
     const res = await getAnime({ resource: `batch/${slug}` });
-
-    // Sesuaikan dengan struktur API kamu
     const data = res?.data || res || {};
-
-    // Jika data kosong
     if (!data || !data.poster) {
         return (
             <main className="p-10 text-center text-gray-400">
