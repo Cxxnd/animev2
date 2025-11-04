@@ -37,7 +37,6 @@ let currentUserAgent = userAgents[0];
 setInterval(() => {
     const randomIndex = Math.floor(Math.random() * userAgents.length);
     currentUserAgent = userAgents[randomIndex];
-    console.log(`🔄 User-Agent diganti menjadi: ${currentUserAgent}`);
 }, 60000);
 
 // 🔹 Fungsi utama fetch API
