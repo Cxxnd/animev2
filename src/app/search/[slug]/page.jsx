@@ -1,26 +1,17 @@
 import AnimeList from "@/components/AnimeList";
+import { getAnime } from "@/libs/service-api";
 import ButtonBack from "@/components/Navbar/ButtonBack";
 
 const Page = async ({ params }) => {
-    const { slug } = await params;
-    const decoded = decodeURIComponent(slug);
-    const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/search/${decoded}`;
-
     try {
-        const response = await fetch(apiUrl, {
-            next: { revalidate: 120 },
-            headers: {
-                "User-Agent":
-                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
-            },
-        });
+        const { slug } = await params;
+        const decoded = decodeURIComponent(slug);
 
-        if (!response.ok) {
-            throw new Error(`Fetch gagal: ${response.status}`);
-        }
+        // Ambil data dari API
+        const data = await getAnime({ resource: `search/${decoded}` });
 
-        const data = await response.json();
-        const results = data.search_results || [];
+        // Pastikan hasilnya ada dan punya list
+        const results = data?.data || data?.results || [];
 
         return (
             <section className="min-h-screen px-6 py-8 bg-gray-900 text-white">
@@ -39,7 +30,7 @@ const Page = async ({ params }) => {
             </section>
         );
     } catch (error) {
-        console.error("Error di search:", error.message);
+        console.error("Error di search:", error?.message || error);
         return (
             <section className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-red-400">
                 <p>Terjadi kesalahan: {error.message}</p>
