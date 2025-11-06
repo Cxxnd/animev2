@@ -3,7 +3,7 @@ import InputSearch from "./inputSearch";
 
 const Navbar = () => {
     return (
-        <header className=" bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 rounded-b-xl shadow-lg sticky top-0 z-50">
+        <header className=" bg-gradient-to-r from-cyan-400 via-cyan-400 to-blue-600 rounded-b-xl shadow-lg sticky top-0 z-50">
             <div className="flex flex-col md:flex-row justify-between items-center p-4 gap-4">
                 {/* Logo/Brand Name */}
                 <Link
