@@ -28,12 +28,6 @@ const Page = async () => {
                     <h2 className="text-2xl font-semibold text-blue-400 border-b border-blue-700 pb-2">
                         🔥 Ongoing Anime
                     </h2>
-                    {/* <Link
-                        href="/genre"
-                        className="text-sm hover:text-purple-300 transition-colors duration-300"
-                    >
-                        Lihat OnGoing →
-                    </Link> */}
                 </div>
 
                 <div className="grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-5">
