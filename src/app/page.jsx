@@ -65,7 +65,7 @@ const Page = async () => {
                     ))}
                 </div>
             </section>
-            <div className="flex items-center justify-center mt-10">
+            <div className="flex items-center justify-center mt-4 mb-12 sm:mb-6">
                 <Link
                     href="/genre"
                     className="text-sm hover:text-purple-300 transition-colors duration-300 bg-blue-600 px-3 py-1 rounded-md"
