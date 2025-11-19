@@ -4,9 +4,13 @@
     transform: rotateZ(45deg);
     perspective: 1000px;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     color: #002fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 .loader:before,
 .loader:after {
