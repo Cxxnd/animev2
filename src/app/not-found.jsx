@@ -13,7 +13,9 @@ const NotFound = () => {
             </div>
 
             <h1>Oops! Something went wrong!</h1>
-            <div class="btn">Return to Home</div>
+            <a href="/" class="btn">
+                Return to Home
+            </a>
         </div>
     );
 };
