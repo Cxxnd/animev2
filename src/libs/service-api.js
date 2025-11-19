@@ -51,8 +51,7 @@ export async function getAnime({ resource, query = "" }) {
                 "User-Agent": currentUserAgent,
                 "Accept": "application/json",
             },
-            cache: "no-store",
-            next: { revalidate: 60 }
+            next: { revalidate: 25 }
         });
 
         if (!response.ok) {
