@@ -114,12 +114,6 @@ body {
 
 /* NotFound */
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
 /* FACE */
 .face {
     width: 300px;
