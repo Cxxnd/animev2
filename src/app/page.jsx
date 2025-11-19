@@ -7,7 +7,6 @@ const Page = async () => {
 
     const ongoingAnime = animeHome?.data?.ongoing_anime || [];
     const completeAnime = animeHome?.data?.complete_anime || [];
-    const handlerComplete = () => {};
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 px-6 py-10 text-white">

@@ -12,7 +12,7 @@ const NotFound = () => {
                 <div class="mouth"></div>
             </div>
 
-            <h1>Oops! Something went wrong!</h1>
+            <h4>Oops! Something went wrong!</h4>
             <a href="/" class="btn">
                 Return to Home
             </a>

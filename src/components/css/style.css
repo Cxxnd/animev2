@@ -189,7 +189,7 @@
 }
 
 /* TEXT & BUTTON */
-h1 {
+h4 {
     font-weight: 800;
     color: #383a41;
     text-align: center;
@@ -198,7 +198,7 @@ h1 {
 }
 
 @media screen and (max-width: 400px) {
-    h1 {
+    h4 {
         padding: 0 20px;
         font-size: 2em;
     }
