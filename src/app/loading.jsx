@@ -1,7 +1,8 @@
+import "../components/css/loading.css";
 const Loading = () => {
     return (
         <div className="min-h-screen flex items-center justify-center">
-            <span class="loader"></span>
+            <span className="loader"></span>
         </div>
     );
 };
